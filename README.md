@@ -1,25 +1,27 @@
-# 📈 Stock Market Analysis and Prediction using PyTorch
+# 📈 PyTorch ile Borsa Analizi ve Hisse Senedi Tahmini
 
-This project aims to analyze the historical stock data of tech giants (Apple, Amazon, Google, Microsoft) and predict future prices using Deep Learning models (**LSTM and GRU**) via **PyTorch**.
+Bu proje, teknoloji devlerinin (Apple, Amazon, Google, Microsoft) geçmiş hisse senedi verilerini analiz etmeyi ve **PyTorch** kullanarak Derin Öğrenme modelleri (**LSTM ve GRU**) ile gelecek fiyat tahminleri yapmayı amaçlamaktadır.
 
-## 🚀 Project Overview & Features
+## 🚀 Proje Adımları ve Özellikler
 
-* **Exploratory Data Analysis (EDA):** Extracted historical data using the `yfinance` library. Conducted daily returns, moving averages, and correlation analysis between different tech stocks.
-* **Data Preprocessing:** Scaled the 'Close' prices into a [0, 1] range using `MinMaxScaler`. Restructured the time-series data using a sliding window approach (60 days) to predict the next day's closing price.
-* **PyTorch Integration:** Converted NumPy arrays into PyTorch Tensors and utilized `DataLoader` to feed the data into the models in batches (batch size of 16) for optimized training.
-* **Deep Learning Models:** Built two distinct architectures using PyTorch's `nn.Module`:
-  * 2-Layer **LSTM** Model
-  * 2-Layer **GRU** Model (with a Dropout of 0.2)
-* **Evaluation:** Trained the models using Mean Squared Error (MSE) loss and the Adam optimizer. Evaluated the final performance using the Root Mean Squared Error (RMSE) metric.
+* **Keşifsel Veri Analizi (EDA):** `yfinance` kütüphanesi ile Yahoo Finance üzerinden geçmiş veriler çekildi. Günlük getiriler, hareketli ortalamalar (Moving Averages) ve hisseler arası korelasyon analizleri yapıldı.
+* **Veri Ön İşleme:** Modelin daha iyi öğrenebilmesi için Kapanış (Close) fiyatları `MinMaxScaler` ile [0, 1] aralığına ölçeklendirildi. Zaman serisi verisi, kayan pencere (sliding window) yöntemiyle son 60 güne bakarak bir sonraki günü tahmin edecek şekilde yeniden yapılandırıldı.
+* **PyTorch Entegrasyonu:** NumPy dizileri PyTorch Tensor'lerine dönüştürüldü ve eğitim sürecini optimize etmek için `DataLoader` ile batch'ler (16'lık paketler) halinde modellere beslendi.
+* **Derin Öğrenme Modelleri:** PyTorch `nn.Module` yapısı kullanılarak iki farklı mimari inşa edildi:
+  * 2 Katmanlı **LSTM** Modeli
+  * 2 Katmanlı **GRU** Modeli (Dropout = 0.2)
+* **Değerlendirme:** Modeller Mean Squared Error (MSE) loss fonksiyonu ve Adam optimizer ile eğitildi. Başarımları Root Mean Squared Error (RMSE) metriği ile ölçüldü.
 
-## 📊 Model Comparison (LSTM vs. GRU)
+## 📊 Model Karşılaştırması (LSTM vs. GRU)
 
-The project concludes with a performance and training time comparison between the two models:
-* The GRU model trained faster than the LSTM due to having fewer parameters.
-* Both models' test predictions were inverse-transformed and plotted against the actual historical closing prices to visually evaluate their accuracy.
+Proje sonucunda her iki modelin de test verisi üzerindeki performansı ve eğitim süreleri karşılaştırılmıştır:
+* GRU modeli, daha az parametre içerdiği için LSTM'e kıyasla daha hızlı eğitilmiştir.
+* Her iki modelin de test tahminleri ters dönüşüm (inverse transform) ile orijinal fiyat ölçeğine getirilmiş ve doğruluklarını görsel olarak değerlendirmek için gerçek kapanış fiyatlarıyla birlikte grafiğe dökülmüştür.
 
-## 🛠️ Technologies Used
-* **Language:** Python 3
-* **Data Gathering & Processing:** yfinance, Pandas, NumPy, Scikit-Learn
-* **Visualization:** Matplotlib, Seaborn
-* **Deep Learning Framework:** PyTorch
+## 🛠️ Kullanılan Teknolojiler
+* **Dil:** Python 3
+* **Veri Çekme & İşleme:** yfinance, Pandas, NumPy, Scikit-Learn
+* **Görselleştirme:** Matplotlib, Seaborn
+* **Derin Öğrenme Çerçevesi:** PyTorch,
+
+  
