@@ -1,5 +1,4 @@
-# 📈 PyTorch ile Borsa Analizi ve Hisse Senedi Tahmini
-
+> 📄 **Sunum Dosyası:** Projenin sunum slaytlarına [buradan](./stock_market_analysis_slides.pptx) ulaşabilirsiniz.                                                    📈 PyTorch ile Borsa Analizi ve Hisse Senedi Tahmini                                                    
 Bu proje, teknoloji devlerinin (Apple, Amazon, Google, Microsoft) geçmiş hisse senedi verilerini analiz etmeyi ve **PyTorch** kullanarak Derin Öğrenme modelleri (**LSTM ve GRU**) ile gelecek fiyat tahminleri yapmayı amaçlamaktadır.
 
 ## 🚀 Proje Adımları ve Özellikler
@@ -8,8 +7,8 @@ Bu proje, teknoloji devlerinin (Apple, Amazon, Google, Microsoft) geçmiş hisse
 * **Veri Ön İşleme:** Modelin daha iyi öğrenebilmesi için Kapanış (Close) fiyatları `MinMaxScaler` ile [0, 1] aralığına ölçeklendirildi. Zaman serisi verisi, kayan pencere (sliding window) yöntemiyle son 60 güne bakarak bir sonraki günü tahmin edecek şekilde yeniden yapılandırıldı.
 * **PyTorch Entegrasyonu:** NumPy dizileri PyTorch Tensor'lerine dönüştürüldü ve eğitim sürecini optimize etmek için `DataLoader` ile batch'ler (16'lık paketler) halinde modellere beslendi.
 * **Derin Öğrenme Modelleri:** PyTorch `nn.Module` yapısı kullanılarak iki farklı mimari inşa edildi:
-  * 2 Katmanlı **LSTM** Modeli
-  * 2 Katmanlı **GRU** Modeli (Dropout = 0.2)
+  * 2 Katmanlı **LSTM** Modeli
+  * 2 Katmanlı **GRU** Modeli (Dropout = 0.2)
 * **Değerlendirme:** Modeller Mean Squared Error (MSE) loss fonksiyonu ve Adam optimizer ile eğitildi. Başarımları Root Mean Squared Error (RMSE) metriği ile ölçüldü.
 
 ## 📊 Model Karşılaştırması (LSTM vs. GRU)
@@ -24,4 +23,4 @@ Proje sonucunda her iki modelin de test verisi üzerindeki performansı ve eğit
 * **Görselleştirme:** Matplotlib, Seaborn
 * **Derin Öğrenme Çerçevesi:** PyTorch,
 
-  
+    
